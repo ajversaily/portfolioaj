@@ -1,1 +1,0 @@
-document.getElementById('shuffle-btn').addEventListener('click', shuffleCards);
