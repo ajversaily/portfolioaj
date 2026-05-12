@@ -1,0 +1,62 @@
+@keyframes deal {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes lift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shuffle {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(15deg); }
+  50% { transform: rotateZ(-15deg); }
+  75% { transform: rotateZ(10deg); }
+  100% { transform: rotateZ(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--shadow-resting); }
+  50% { box-shadow: 0 4px 12px rgba(200, 0, 42, 0.6); }
+}
+
+/* Classes for animations */
+.card--dealing {
+  animation: deal var(--duration-deal) var(--ease-card) forwards;
+}
+
+.card--flipping {
+  animation: flip var(--duration-flip) var(--ease-flip) forwards;
+}
+
+.card--lifting {
+  animation: lift var(--duration-play) var(--ease-card) forwards;
+}
+
+.card--shuffling {
+  animation: shuffle 0.5s ease-in-out;
+}
+
+.card--joker {
+  animation: pulse-glow 2s infinite;
+}

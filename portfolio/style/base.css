@@ -1,0 +1,71 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  background-color: var(--felt);
+  color: var(--moon);
+  line-height: 1.6;
+}
+
+/* CSS Custom Properties */
+:root {
+  /* Salem Mania brand */
+  --pyre: #c8002a;
+  --forge: #d4420a;
+  --char: #060402;
+  --moon: #f0e8d5;
+
+  /* Card-specific */
+  --felt: #0d1f0e;
+  --card-bg: #faf6ee;
+  --card-border: #c9bfa8;
+  --shadow-resting: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lifted: 0 16px 40px rgba(0,0,0,0.65);
+  --shadow-active: 0 24px 60px rgba(200,0,42,0.3);
+
+  /* Suits */
+  --spades: #1a1a1a;
+  --hearts: #c8002a;
+  --diamonds: #d4420a;
+  --clubs: #2c2c2c;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'Source Code Pro', monospace;
+  --font-fraktur: 'UnifrakturMaguntia', cursive;
+
+  /* Motion */
+  --ease-card: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-flip: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-deal: 400ms;
+  --duration-flip: 500ms;
+  --duration-play: 350ms;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
