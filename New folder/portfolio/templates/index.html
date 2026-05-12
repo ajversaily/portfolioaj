@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}AJ Rasaily — Developer & Founder{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Ajnavi (AJ) Rasaily</h1>
+    <p class="hero-tagline">CS student at Rutgers. Building AI systems, editorial platforms, and fintech tools from Columbus, OH.</p>
+    <div class="hero-links">
+      <a href="https://salemmania.org" target="_blank" rel="noopener">Salem Mania</a>
+      <a href="https://ajversaily.github.io" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/resume" class="btn-primary">View Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-list">
+      {% for project in projects %}
+      <article class="project-card">
+        <div class="project-header">
+          <div>
+            <h3>{{ project.title }}</h3>
+            <p class="project-subtitle">{{ project.subtitle }}</p>
+          </div>
+          <div class="project-meta">
+            <span class="project-year">{{ project.year }}</span>
+            <span class="status status--{{ project.status }}">{{ project.status }}</span>
+          </div>
+        </div>
+        <ul class="project-bullets">
+          {% for bullet in project.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+        <div class="project-footer">
+          <div class="stack-tags">
+            {% for tech in project.stack %}
+            <code>{{ tech }}</code>
+            {% endfor %}
+          </div>
+          <div class="project-links">
+            {% if project.live_url %}
+            <a href="{{ project.live_url }}" target="_blank" rel="noopener">Live Site</a>
+            {% endif %}
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" target="_blank" rel="noopener">GitHub</a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section section--alt">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="experience-list">
+
+      <article class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Independent Web Designer &amp; Developer</h3>
+            <p class="experience-org">Freelance / Personal Projects &mdash; Remote</p>
+          </div>
+          <span class="experience-year">2026–Present</span>
+        </div>
+        <ul>
+          <li>Shipped full-stack client sites with Flask backends, custom analytics dashboards, and multi-layer form infrastructure</li>
+          <li>Wired LLM APIs into live client workflows for content generation, UX copy, and automated QA</li>
+          <li>Built security-layered backends with privacy-first analytics; applied data governance standards used in regulated AI and fintech</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>English Tutor</h3>
+            <p class="experience-org">Independent / Freelance &mdash; Columbus, OH</p>
+          </div>
+          <span class="experience-year">2025</span>
+        </div>
+        <ul>
+          <li>Taught one-on-one English to elementary-aged immigrant students — reading comprehension, essay structure, and grammar across language and cultural barriers</li>
+          <li>Built individualized lesson plans from diagnostic gaps with iterative feedback loops — the same logic as ML training and evaluation cycles</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Cashier &amp; Customer Service Associate</h3>
+            <p class="experience-org">Retail &mdash; Etna, OH</p>
+          </div>
+          <span class="experience-year">2024–Present</span>
+        </div>
+        <ul>
+          <li>Handled high-volume cash, card, and digital transactions daily — zero shortage tolerance, rigorous end-of-shift reconciliation</li>
+          <li>Managed sensitive customer payment data under strict security protocols — built data stewardship habits that matter in AI and fintech systems</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <p>Python, JavaScript, HTML/CSS, SQL, Bash</p>
+      </div>
+      <div class="skill-group">
+        <h4>AI &amp; ML</h4>
+        <p>LLM API integration (OpenAI, Anthropic), prompt engineering, ML signal modeling, AI workflow automation, neural network fundamentals</p>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; Finance</h4>
+        <p>Algorithmic trading systems, real-time data pipelines, P&amp;L analysis, statistical modeling, risk management logic, Pandas</p>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks &amp; Tools</h4>
+        <p>Flask, Git, GitHub Pages, TradingView API, Coinbase Pro API, Formspree</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section--alt">
+  <div class="container contact-container">
+    <h2>Get in Touch</h2>
+    <p>Open to internships, research roles, and conversations about AI, fintech, and systems.</p>
+    <a href="mailto:ajrasaily08@gmail.com" class="btn-primary">ajrasaily08@gmail.com</a>
+  </div>
+</section>
+
+{% endblock %}
